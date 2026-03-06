@@ -7,7 +7,7 @@ from langchain.prompts import PromptTemplate
 
 
 def load_qwen_model():
-    """加载 Qwen 1.5-0.5B 模型（CPU 模式）"""
+    """加载 Qwen 1.5-0.5B 模型（GPU 模式）"""
     tokenizer = AutoTokenizer.from_pretrained("Qwen/Qwen1.5-0.5B", trust_remote_code=True)
     model = AutoModelForCausalLM.from_pretrained(
         "Qwen/Qwen1.5-0.5B",

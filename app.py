@@ -3,6 +3,7 @@ os.environ['HF_ENDPOINT'] = 'https://hf-mirror.com'
 from flask import Flask, render_template, request, jsonify
 from rag_system.vector_db import load_and_split_documents, create_vector_db
 from rag_system.rag import create_rag_chain
+from functools import lru_cache
 from collections import defaultdict
 
 app = Flask(__name__)
@@ -14,6 +15,12 @@ qa_chain = create_rag_chain(db)
 @app.route('/')
 def home():
     return render_template('index.html')
+
+@lru_cache(maxsize=100)
+def get_answer(question):
+    result = qa_chain.invoke({"query": question})
+    return result['result'], result.get('source_documents', [])
+
 
 @app.route('/ask', methods=['POST'])
 def ask():

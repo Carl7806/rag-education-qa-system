@@ -23,7 +23,6 @@ def load_and_split_documents(directory):
     texts = text_splitter.split_documents(documents)
     return texts
 
-
 def create_vector_db(texts):
     """创建向量数据库"""
     unique_texts = []
