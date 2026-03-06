@@ -126,6 +126,13 @@ text_splitter = RecursiveCharacterTextSplitter(
 └── chroma_db/              # 自动生成的向量数据库（首次运行后出现）
 ````
 
+运行截图
+
+<img width="1124" height="688" alt="屏幕截图 2026-03-06 232635" src="https://github.com/user-attachments/assets/b3ce1e1e-f2b0-452f-877a-3b547da6185b" />
+
+<img width="1128" height="606" alt="屏幕截图 2026-03-06 232652" src="https://github.com/user-attachments/assets/fb6117a9-45b2-4d03-af13-2a8df247dbbe" />
+
+
 ❓ 常见问题
 1. 启动时提示网络错误，无法下载模型
 设置 Hugging Face 镜像：set HF_ENDPOINT=https://hf-mirror.com（Windows）
